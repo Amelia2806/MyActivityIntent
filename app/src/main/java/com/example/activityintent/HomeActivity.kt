@@ -1,9 +1,8 @@
-package com.example.registration
+package com.example.activityintent
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.activityintent.R
+import android.widget.TextView
 
 class HomeActivity : AppCompatActivity() {
 
@@ -11,18 +10,18 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val tvUsername = findViewById<TextView>(R.id.tvUsername)
-        val tvEmail = findViewById<TextView>(R.id.tvEmail)
-        val tvPhone = findViewById<TextView>(R.id.tvPhone)
-        val tvGender = findViewById<TextView>(R.id.tvGender)
+        val tvUsername: TextView = findViewById(R.id.tvUsername)
+        val tvEmail: TextView = findViewById(R.id.tvEmail)
+        val tvPhone: TextView = findViewById(R.id.tvPhone)
+        val tvGender: TextView = findViewById(R.id.tvGender)
 
-        // Mengambil data dari LoginActivity
-        val username = intent.getStringExtra("USERNAME")
-        val email = intent.getStringExtra("EMAIL")
-        val phone = intent.getStringExtra("PHONE")
-        val gender = intent.getStringExtra("GENDER")
+        // Ambil data dari Intent
+        val username = intent.getStringExtra("USER_USERNAME")
+        val email = intent.getStringExtra("USER_EMAIL")
+        val phone = intent.getStringExtra("USER_PHONE")
+        val gender = intent.getStringExtra("USER_GENDER")
 
-        // Menampilkan data di profil
+        // Tampilkan data di TextView
         tvUsername.text = "Nama: $username"
         tvEmail.text = "Email: $email"
         tvPhone.text = "Nomor HP: $phone"

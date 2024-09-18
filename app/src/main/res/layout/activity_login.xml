@@ -21,21 +21,6 @@
         android:layout_marginBottom="35dp" />
     <!-- Menempatkan judul di tengah dan memberi jarak bawah 35dp -->
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:drawableLeft="@drawable/baseline_email_24"
-        android:drawablePadding="8dp"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/rounded_edittext"
-        android:inputType="textPassword"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-    <!-- Password input dengan ikon kunci di kiri dan ikon visibility di kanan, serta tipe input khusus untuk password -->
-
     <!-- EditText untuk input username -->
     <EditText
         android:id="@+id/etUsername"
@@ -50,6 +35,35 @@
         android:textColor="@android:color/black"
         android:textSize="16sp" />
     <!-- Menambahkan ikon di sebelah kiri, padding, dan background yang sudah dibentuk khusus -->
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="8dp"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+
+    <!-- EditText untuk input password -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawablePadding="8dp"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
     <!-- Tombol Login -->
     <androidx.appcompat.widget.AppCompatButton

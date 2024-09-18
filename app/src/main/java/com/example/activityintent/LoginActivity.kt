@@ -1,13 +1,11 @@
-package com.example.registration
+package com.example.activityintent
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import com.example.activityintent.R
-import com.example.activityintent.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -15,40 +13,33 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val etUsername = findViewById<EditText>(R.id.etUsername)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val tvRegister = findViewById<TextView>(R.id.tvRegister)
+        val etUsername: EditText = findViewById(R.id.etUsername)
+        val etPassword: EditText = findViewById(R.id.etPassword)
+        val btnLogin: Button = findViewById(R.id.btnLogin)
+        val tvRegister: TextView = findViewById(R.id.tvRegister)
 
-        // Mengambil data dari halaman Registrasi
-        val registeredUsername = intent.getStringExtra("USERNAME")
-        val registeredEmail = intent.getStringExtra("EMAIL")
-        val registeredPhone = intent.getStringExtra("PHONE")
-        val registeredGender = intent.getStringExtra("GENDER")
+        // Ambil data dari RegisterActivity
+        val username = intent.getStringExtra("REGISTERED_USERNAME")
+        val email = intent.getStringExtra("REGISTERED_EMAIL")
+        val phoneNumber = intent.getStringExtra("REGISTERED_PHONE")
+        val gender = intent.getStringExtra("REGISTERED_GENDER")
 
-        // Ketika tombol Login diklik
+        etUsername.setText(username) // Set username jika diperlukan
+
         btnLogin.setOnClickListener {
-            val inputUsername = etUsername.text.toString()
-            val inputPassword = etPassword.text.toString()
-
-            // Validasi sederhana untuk login
-            if (inputUsername == registeredUsername && inputPassword.isNotEmpty()) {
-                // Login berhasil, kirim data ke halaman Profile
-                val intent = Intent(this, HomeActivity::class.java).apply {
-                    putExtra("USERNAME", registeredUsername)
-                    putExtra("EMAIL", registeredEmail)
-                    putExtra("PHONE", registeredPhone)
-                    putExtra("GENDER", registeredGender)
-                }
-                startActivity(intent)
-            } else {
-                // Jika login gagal, tampilkan pesan error (contoh sederhana)
-                etPassword.error = "Invalid credentials"
+            val password = etPassword.text.toString()
+            // Kirim data ke HomeActivity setelah login berhasil
+            val intent = Intent(this, HomeActivity::class.java).apply {
+                putExtra("USER_USERNAME", username)
+                putExtra("USER_EMAIL", email)
+                putExtra("USER_PHONE", phoneNumber)
+                putExtra("USER_GENDER", gender)
             }
+            startActivity(intent)
         }
 
-        // Pindah ke halaman registrasi jika belum punya akun
         tvRegister.setOnClickListener {
+            // Navigasi ke halaman Registrasi
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

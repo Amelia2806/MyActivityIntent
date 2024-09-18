@@ -7,7 +7,6 @@
     android:gravity="center"
     android:padding="16dp"
     android:background="@drawable/img_1">
-    <!-- LinearLayout dengan orientasi vertikal, padding 16dp, dan latar belakang putih -->
 
     <!-- TextView untuk judul halaman "Register" -->
     <TextView
@@ -18,9 +17,7 @@
         android:textSize="29sp"
         android:textStyle="bold"
         android:textColor="#880E4F"
-        android:layout_gravity="center"
         android:layout_marginBottom="35dp" />
-    <!-- Menampilkan teks "Register" dengan ukuran besar, tebal, dan di tengah layar -->
 
     <!-- EditText untuk input username -->
     <EditText
@@ -35,7 +32,6 @@
         android:background="@drawable/rounded_edittext"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
-    <!-- Input username dengan ikon pengguna di sebelah kiri, padding, dan background bulat -->
 
     <!-- EditText untuk input email -->
     <EditText
@@ -51,7 +47,6 @@
         android:inputType="textEmailAddress"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
-    <!-- Input email dengan ikon email di sebelah kiri, padding, dan tipe input email -->
 
     <!-- EditText untuk input nomor telepon -->
     <EditText
@@ -67,14 +62,23 @@
         android:inputType="phone"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
-    <!-- Input nomor telepon dengan ikon telepon di sebelah kiri, padding,
-    dan tipe input telepon -->
+
+    <!-- EditText untuk input password -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawablePadding="8dp"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
     <!-- LinearLayout untuk Gender -->
-    <!-- Menggunakan RadioGroup untuk pemilihan gender, karena hanya satu yang boleh dipilih -->
-
-    <!-- Tombol Register -->
-
     <LinearLayout
         android:id="@+id/field_gender"
         android:layout_width="match_parent"
@@ -96,7 +100,6 @@
             android:id="@+id/rgGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -115,6 +118,7 @@
         </RadioGroup>
     </LinearLayout>
 
+    <!-- Tombol Register -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
@@ -124,14 +128,12 @@
         android:textColor="@android:color/white"
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
-    <!-- Tombol Register dengan background khusus dan warna teks putih -->
 
     <!-- LinearLayout untuk bagian "Already Have an Account?" -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <!-- Layout horizontal untuk teks "Already Have an Account?" dan link "Log In" -->
 
         <!-- TextView untuk teks "Already Have an Account?" -->
         <TextView
@@ -141,11 +143,10 @@
             android:text="Already Have an Account? "
             android:textSize="14sp"
             android:textColor="#666666"/>
-        <!-- Teks "Already Have an Account?" dengan warna abu-abu -->
 
         <!-- TextView link "Log In" -->
         <TextView
-            android:id="@+id/tvRegister"
+            android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log In"
